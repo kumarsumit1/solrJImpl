@@ -1,0 +1,7 @@
+com\solrj\impl\query\Book.class
+com\solrj\impl\solrJImpl\App.class
+com\solrj\impl\solrJImpl\SolrjExample.class
+com\solrj\impl\solrJImpl\SolrServerFactory.class
+com\solrj\impl\solrJImpl\SolrDao.class
+com\solrj\impl\query\BookDAL.class
+com\solrj\impl\solrJImpl\Item.class

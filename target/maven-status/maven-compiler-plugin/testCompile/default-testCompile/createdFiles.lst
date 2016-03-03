@@ -1,0 +1,5 @@
+com\solrj\impl\solrJImpl\BookDALTest.class
+com\solrj\impl\solrJImpl\AppTest.class
+com\solrj\impl\solrJImpl\RealTimeGet.class
+com\solrj\impl\solrJImpl\AtomicUpdate.class
+com\solrj\impl\solrJImpl\SolrExampleTests.class
