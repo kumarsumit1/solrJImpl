@@ -1,5 +1,10 @@
 package com.solrj.impl.solrJImpl;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.solr.client.solrj.beans.Field;
 
 public class Item 
@@ -12,9 +17,42 @@ public class Item
     String name_fr;
     @Field("price_f")
     Float price;
+    @Field("category_t")
+    String category;
+    @Field(child = true )
+    List<Child> child =new ArrayList<Child>();
     
-    
-    public Item() {} 
+  
+
+	/**
+	 * @return the category
+	 */
+	public String getCategory() {
+		return category;
+	}
+
+	/**
+	 * @param category the category to set
+	 */
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	/**
+	 * @return the child
+	 */
+	public List<Child> getChild() {
+		return child;
+	}
+
+	/**
+	 * @param child the child to set
+	 */
+	public void setChild(List<Child> child) {
+		this.child = child;
+	}
+
+	public Item() {} 
     
     public Item(String id, String name_en,String name_fr, Float price)
     {
