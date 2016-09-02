@@ -1,10 +1,14 @@
 package com.solrj.impl.solrJImpl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
  
+
+
+
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
@@ -15,8 +19,8 @@ import org.apache.solr.common.SolrInputDocument;
  
 public class SolrjExample 
 {
-   // String solrURL = "http://localhost:8983/solr/test_Multi";
-    String solrURL = "http://192.168.99.100:8983/solr/demo";
+    String solrURL = "http://localhost:8983/solr/tweets";
+   // String solrURL = "http://192.168.99.100:8983/solr/tweets";
     public static void main( String[] args ) {
         new SolrjExample().execute();
     }
@@ -71,7 +75,7 @@ public class SolrjExample
     private void addDocuments(SolrDao<Item> solrDao) 
     {
         Collection<SolrInputDocument> docs = new ArrayList<SolrInputDocument>();
-        for (int i=0; i<1000; i++)
+        for (int i=0; i<1; i++)
             docs.add( getRandomSolrDoc (i) );
  
         solrDao.putDoc (docs);
@@ -80,9 +84,15 @@ public class SolrjExample
     private SolrInputDocument getRandomSolrDoc(int count) 
     {
         SolrInputDocument doc = new SolrInputDocument();
-        doc.addField( "id", "id"+count, 1.0f );
-        doc.addField( "name_en_s", "doc_en"+count, 1.0f );
-        doc.addField( "name_fr_s", "En revisión"+count, 1.0f );
+        doc.addField( "id", "id2", 1.0f );
+        String[] temp={"value1", "value2", "value3"};
+        ArrayList<String> values = new ArrayList<String>(); //(ArrayList<String>) Arrays.asList("ctcId1:ICA1", "ctcId2:ICA4,ICA2,ICA8", "ctcId3:ICA9") ;//  asList({"value1", "value2", "value3"});
+       values.add("ctcId1:ICA1");
+       values.add("ctcId2:ICA4,ICA2,ICA8");
+       values.add("ctcId3:ICA9");
+        doc.addField("field", values);
+        doc.addField( "name_en_s", "ctcId1:ICA1#ctcId2:ICA4,ICA2,ICA8#ctcId3:ICA9", 1.0f );
+        doc.addField( "name_fr_s", "work3", 1.0f );
         doc.addField( "price_f", count%10 );
         return doc;
     }

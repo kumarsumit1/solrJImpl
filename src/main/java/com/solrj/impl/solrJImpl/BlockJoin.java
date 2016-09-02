@@ -75,7 +75,17 @@ public class BlockJoin {
 		
 		List<Child> temp=new ArrayList<Child>();
 		
-		Child chi1=new Child();
+		List<Child> temp1=new ArrayList<Child>();
+		
+		for(int i=0; i< 18; i++){
+			Child chi1=new Child();
+			chi1.setId("678"+i);
+			chi1.setName("chi1"+i);
+			chi1.setCategory("C");
+			temp.add(chi1);
+		}
+		
+/*		Child chi1=new Child();
 		chi1.setId("678");
 		chi1.setName("chi1");
 		chi1.setCategory("C");
@@ -84,24 +94,24 @@ public class BlockJoin {
 		chi2.setName("chi2");
 		chi2.setCategory("C");
 		temp.add(chi1);
-		temp.add(chi2);
+		temp.add(chi2);*/
 		
 		Item ite=new Item();
-		ite.setId("[123]");
+		ite.setId("123:123");
 		ite.setName_en("check");
-		ite.setName_fr("check");
-		ite.setPrice(456f);
+		ite.setName_fr("check_123");
+		ite.setPrice(123f);
 		ite.setCategory("P");
 		ite.setChild(temp);
 		
 		//2nd doc
 		Item ite1=new Item();
-		ite1.setId("[456]");
+		ite1.setId("456:54");
 		ite1.setName_en("check");
-		ite1.setName_fr("check");
+		ite1.setName_fr("check_456");
 		ite1.setPrice(456f);
 		ite1.setCategory("P");
-		ite1.setChild(temp);
+		ite1.setChild(temp1);
 		
 		
 		
